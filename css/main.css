@@ -1,0 +1,68 @@
+body {
+  background-color: #ffe082;
+  font-family: 'Exo', sans-serif;
+}
+#wrapper {
+  max-width: 90%;
+  width: 800px;
+  margin: 0 auto;
+}
+.simon {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  background-color: #212121;
+  margin: 0 auto;
+  border-radius: 100%;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-align-content: center;
+      -ms-flex-line-pack: center;
+          align-content: center;
+}
+.simon .field {
+  width: 173.91304347826087px;
+  height: 173.91304347826087px;
+  margin: 0.3rem;
+}
+.simon .green {
+  background-color: #69f0ae;
+  border-top-left-radius: 100%;
+}
+.simon .red {
+  background-color: #b71c1c;
+  border-top-right-radius: 100%;
+}
+.simon .blue {
+  background-color: #64b5f6;
+  border-bottom-left-radius: 100%;
+}
+.simon .yellow {
+  background-color: #ffd740;
+  border-bottom-right-radius: 100%;
+}
+.simon .simon-menu {
+  position: absolute;
+  background-color: #212121;
+  width: 200px;
+  height: 200px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+      -ms-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+  border-radius: 100%;
+}

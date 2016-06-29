@@ -1,0 +1,68 @@
+//------------------- Variables ----------------------//
+orange 		= #ffe082
+
+red1 		= #b71c1c 
+red2 		= #d50000 
+
+blue1 		= #64b5f6
+blue2 		= #0d47a1
+
+green1 		= #69f0ae
+green2 		= #00c853 
+
+yellow1  	= #ffd740
+yellow2 	= #ffc400 
+
+dark 		= #212121
+
+simon-size 	= 400px
+
+//------------------- Global Styles ----------------------//
+body 
+	background-color orange
+	font-family: 'Exo', sans-serif;
+	
+#wrapper
+	max-width 90%
+	width 800px
+	margin 0 auto
+	
+//------------------- Simon Game Styles ----------------------//
+.simon
+	position relative
+	width simon-size
+	height simon-size
+	background-color dark
+	margin 0 auto
+	border-radius 100%
+	display flex
+	flex-direction row
+	flex-wrap wrap 
+	justify-content center
+	align-items center
+	align-content center
+	.field
+		width ( simon-size / 2.3 ) px
+		height ( simon-size / 2.3 ) px
+		margin .3rem
+	.green 
+		background-color green1
+		border-top-left-radius 100%
+	.red
+		background-color red1
+		border-top-right-radius 100%
+	.blue 
+		background-color blue1
+		border-bottom-left-radius 100%
+	.yellow 
+		background-color yellow1
+		border-bottom-right-radius 100%
+	.simon-menu
+		position absolute
+		background-color dark
+		width ( simon-size / 2 ) px
+		height ( simon-size / 2 ) px
+		top 50%
+		left 50%
+		transform translateX(-50%) translateY(-50%)
+		border-radius 100%
