@@ -32,11 +32,13 @@ body {
   -webkit-align-content: center;
       -ms-flex-line-pack: center;
           align-content: center;
+  box-shadow: 10px 10px 50px 2px #000;
 }
 .simon .field {
   width: 173.91304347826087px;
   height: 173.91304347826087px;
   margin: 0.3rem;
+  cursor: pointer;
 }
 .simon .green {
   background-color: #69f0ae;
@@ -55,6 +57,7 @@ body {
   border-bottom-right-radius: 100%;
 }
 .simon .simon-menu {
+  box-sizing: border-box;
   position: absolute;
   background-color: #212121;
   width: 200px;
@@ -65,4 +68,64 @@ body {
       -ms-transform: translateX(-50%) translateY(-50%);
           transform: translateX(-50%) translateY(-50%);
   border-radius: 100%;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.simon .simon-menu .simon-menu-box {
+  text-transform: uppercase;
+  text-align: center;
+  background-color: #eee;
+  width: 90%;
+  height: 90%;
+  border-radius: 100%;
+}
+.simon .simon-menu .simon-menu-box h2 {
+  margin-top: 1.5rem;
+}
+.simon .simon-menu .simon-menu-box .row-items {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.simon .simon-menu .simon-menu-box .row-items .simon-screen {
+  background-color: #212121;
+  color: #fff;
+  width: 50px;
+  height: 30px;
+  padding-top: 0.5rem;
+}
+.simon .simon-menu .simon-menu-box .row-items .btn-box {
+  margin-left: 0.5rem;
+}
+.simon .simon-menu .simon-menu-box .row-items .btn-box button {
+  outline: none;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  border: none;
+  border: 3px solid #212121;
+}
+.simon .simon-menu .simon-menu-box .row-items .btn-box button[value='start'] {
+  background-color: #d50000;
+}
+.simon .simon-menu .simon-menu-box .row-items .btn-box button[value='strict'] {
+  background-color: #ff0;
+}
+.simon .simon-menu .simon-menu-box .row-items .btn-box button:active {
+  box-shadow: 3px 3px 4px inset;
+}
+.simon .simon-menu .simon-menu-box .row-items .btn-box p {
+  font-size: 0.8rem;
+  margin-top: 0.2rem;
 }

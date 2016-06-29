@@ -41,10 +41,12 @@ body
 	justify-content center
 	align-items center
 	align-content center
+	box-shadow 10px 10px 50px 2px  black
 	.field
 		width ( simon-size / 2.3 ) px
 		height ( simon-size / 2.3 ) px
 		margin .3rem
+		cursor pointer
 	.green 
 		background-color green1
 		border-top-left-radius 100%
@@ -58,6 +60,7 @@ body
 		background-color yellow1
 		border-bottom-right-radius 100%
 	.simon-menu
+		box-sizing border-box
 		position absolute
 		background-color dark
 		width ( simon-size / 2 ) px
@@ -66,3 +69,43 @@ body
 		left 50%
 		transform translateX(-50%) translateY(-50%)
 		border-radius 100%
+		display flex 
+		justify-content center
+		align-items center
+		.simon-menu-box
+			text-transform uppercase
+			text-align center
+			background-color #eee
+			width 90%
+			height 90%
+			border-radius 100%
+			h2 
+				margin-top 1.5rem
+			.row-items
+				display flex
+				justify-content center
+				.simon-screen
+					background-color dark
+					color #fff
+					width 50px
+					height 30px
+					padding-top .5rem
+				.btn-box
+					margin-left .5rem
+					button 
+						outline none
+						cursor pointer
+						width 20px 
+						height 20px	
+						border-radius 100%
+						border none
+						border 3px solid dark
+						&[value='start']
+							background-color red2
+						&[value='strict']
+							background-color yellow		
+						&:active
+							box-shadow 3px 3px 4px inset	
+					p 
+						font-size .8rem
+						margin-top .2rem
