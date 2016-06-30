@@ -132,7 +132,7 @@ body {
 .simon .simon-menu .simon-menu-box .row-items .btn-box button[value='strict'] {
   background-color: #ff0;
 }
-.simon .simon-menu .simon-menu-box .row-items .btn-box button:active {
+.simon .simon-menu .simon-menu-box .row-items .btn-box button.clicked {
   box-shadow: 3px 3px 4px inset;
 }
 .simon .simon-menu .simon-menu-box .row-items .btn-box p {
@@ -159,4 +159,10 @@ body {
   width: 50%;
   height: 100%;
   cursor: pointer;
+  transition-duration: 0.3s;
+}
+.simon .simon-menu .simon-menu-box .row-items .switch-btn .switch-btn-control.switched {
+  -webkit-transform: translateX(100%);
+      -ms-transform: translateX(100%);
+          transform: translateX(100%);
 }

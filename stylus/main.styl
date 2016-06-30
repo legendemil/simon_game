@@ -110,7 +110,7 @@ body
 							background-color red2
 						&[value='strict']
 							background-color yellow		
-						&:active
+						&.clicked
 							box-shadow 3px 3px 4px inset	
 					p 
 						font-size .8rem
@@ -134,3 +134,6 @@ body
 						width 50%
 						height 100%
 						cursor pointer
+						transition-duration .3s
+						&.switched
+							transform translateX(100%)

@@ -14,7 +14,42 @@ var simon = (function() {
 		userMoves 			= [],
 		movesCount 			= 0,
 		isStrict 			= false,
-		isSound 			= false;
+		isSound 			= false,
+		isStart 			= false;
+
+	
+	function runGame() {
+		console.log('started');
+	}
+
+	function stopGame() {
+		console.log('stopped');
+	}
+
+	
+	function handleStartGame(ev) {
+		var btn = ev.target;
+		$(btn).toggleClass('clicked');
+
+		if(!isStart) 
+			runGame();	
+		else 
+			stopGame();
+		
+		isStart = !isStart;
+	}
+
+	function handleStrictMode(ev){
+		var btn = ev.target;
+		$(btn).toggleClass('clicked');
+		isStrict = !isStrict;
+	}
+
+	function handleSoundChange(ev) {
+		var btn = ev.target;
+		$(btn).toggleClass('switched');
+		isSound = !isSound;
+	}
 
 
 	function cacheDOM() {
@@ -27,7 +62,9 @@ var simon = (function() {
 	}
 
 	function bindEvents() {
-		
+		DOM.menu.startBtn.on('click', handleStartGame);
+		DOM.menu.strictBtn.on('click', handleStrictMode);
+		DOM.menu.switchBtn.on('click', handleSoundChange);
 	}
 	
 	function init() {
