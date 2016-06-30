@@ -57,6 +57,7 @@ body {
   border-bottom-right-radius: 100%;
 }
 .simon .simon-menu {
+  box-shadow: 10px 10px 50px 2px #000;
   box-sizing: border-box;
   position: absolute;
   background-color: #212121;
@@ -98,6 +99,7 @@ body {
           justify-content: center;
 }
 .simon .simon-menu .simon-menu-box .row-items .simon-screen {
+  border-radius: 4px;
   background-color: #212121;
   color: #fff;
   width: 50px;
@@ -148,4 +150,5 @@ body {
   display: inline-block;
   width: 50%;
   height: 100%;
+  cursor: pointer;
 }
