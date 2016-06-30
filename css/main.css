@@ -129,3 +129,23 @@ body {
   font-size: 0.8rem;
   margin-top: 0.2rem;
 }
+.simon .simon-menu .simon-menu-box .row-items .switch-btn {
+  position: relative;
+  box-sizing: border-box;
+  display: inline-block;
+  background-color: #ccc;
+  border-radius: 4px;
+  width: 50px;
+  height: 20px;
+  margin: 0 0.5rem;
+}
+.simon .simon-menu .simon-menu-box .row-items .switch-btn .switch-btn-control {
+  top: 0;
+  left: 0;
+  border-radius: 4px;
+  position: absolute;
+  background-color: #64b5f6;
+  display: inline-block;
+  width: 50%;
+  height: 100%;
+}
