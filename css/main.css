@@ -52,17 +52,29 @@ body {
   background-color: #69f0ae;
   border-top-left-radius: 100%;
 }
+.simon .green.active {
+  background-color: #c6f9e0;
+}
 .simon .red {
   background-color: #b71c1c;
   border-top-right-radius: 100%;
+}
+.simon .red.active {
+  background-color: #e55454;
 }
 .simon .blue {
   background-color: #64b5f6;
   border-bottom-left-radius: 100%;
 }
+.simon .blue.active {
+  background-color: #c4e3fc;
+}
 .simon .yellow {
   background-color: #ffd740;
   border-bottom-right-radius: 100%;
+}
+.simon .yellow.active {
+  background-color: #ffeca6;
 }
 .simon .simon-menu {
   box-shadow: 10px 10px 50px 2px #000;

@@ -54,15 +54,23 @@ body
 	.green 
 		background-color green1
 		border-top-left-radius 100%
+		&.active
+			background-color lighten(@background-color, 20)
 	.red
 		background-color red1
 		border-top-right-radius 100%
+		&.active
+			background-color lighten(@background-color, 20)
 	.blue 
 		background-color blue1
 		border-bottom-left-radius 100%
+		&.active
+			background-color lighten(@background-color, 20)
 	.yellow 
 		background-color yellow1
 		border-bottom-right-radius 100%
+		&.active
+			background-color lighten(@background-color, 20)
 	.simon-menu
 		box-shadow @box-shadow
 		box-sizing border-box
