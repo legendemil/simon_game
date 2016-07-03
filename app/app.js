@@ -32,6 +32,7 @@ var simon = (function() {
 		currentSimonIndex 	= 0;
 		currentUserIndex 	= 0;
 		updateScreen();
+		DOM.fields.removeClass('active');
 	}
 
 	function restartGame() {
@@ -76,12 +77,10 @@ var simon = (function() {
 		setTimeout(function () {
 			startSimonSound();
 		}, 1000);
-		console.log("moves", moves)
 	}
 
 	function nextRound() {
 		currentUserIndex = 0;
-		console.log('dorze, kolejna runda');
 		isUserTurn = false;
 		runRound();
 	}
@@ -95,7 +94,6 @@ var simon = (function() {
 		if(currentSimonField === undefined) {
 			currentSimonIndex = 0;
 			isUserTurn = true;
-			console.log('user turn');
 			return;
 		}
 
@@ -132,7 +130,6 @@ var simon = (function() {
 		var btn = $(ev.target);
 		btn.toggleClass('clicked');
 		isStrict = !isStrict;
-		console.log('strict mode', isStrict)
 	}
 
 	function handleSimonSoundEnd(ev) {
@@ -149,9 +146,9 @@ var simon = (function() {
 			winGame();
 			return;
 		}
-		if(currentUserIndex === moves.length && !isMistake) {
+		if(currentUserIndex === moves.length && !isMistake) 
 			nextRound();
-		}
+		
 	}
 
 	function handleClickField(ev) {
@@ -160,16 +157,11 @@ var simon = (function() {
 
 		var field 			= $(ev.target);
 		currentUserField 	= parseInt(field.attr('data-value'));
-		console.log(field);
 
 		startUserSound(currentUserField);
-		console.log(currentUserField, moves[currentUserIndex])
-		if(currentUserField === moves[currentUserIndex]) {
-			console.log('dobrze');
+		if(currentUserField === moves[currentUserIndex]) 
 			currentUserIndex++;
-		}
 		else {
-			console.log('zle')
 			isMistake = true;
 			restartGame();
 		}
@@ -196,7 +188,6 @@ var simon = (function() {
 			DOM.audio.simon.volume = 0;
 			DOM.audio.user.volume = 0;
 		}
-		console.log('sound', isSound ? 'on' : 'off')
 	}
 
 
@@ -209,7 +200,7 @@ var simon = (function() {
 		DOM.menu.switchBtn 	= $(DOM.simon).find('.switch-btn-control');
 
 		DOM.audio.simon 	= document.querySelector('#simon-audio');
-		DOM.audio.user 	= document.querySelector('#user-audio');
+		DOM.audio.user 		= document.querySelector('#user-audio');
 	}
 
 	function bindEvents() {

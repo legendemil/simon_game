@@ -47,6 +47,8 @@ body
 	align-items center
 	align-content center
 	box-shadow 10px 10px 50px 2px  black
+	animation-name show-simon
+	animation-duration 2s
 	.field
 		width ( simon-size / 2.3 ) px
 		height ( simon-size / 2.3 ) px
@@ -118,17 +120,16 @@ body
 						width 20px 
 						height 20px	
 						border-radius 100%
-						border none
+						border 4px solid dark
 						box-shadow 2px 2px 7px 1px dark
 						transition-duration .3s
 						&[value='start']
-							background-color red2
+							background red2
 						&[value='strict']
 							background-color yellow		
-						&[value='start'].clicked
-							background-color lighten(red1, 20)
-						&[value='strict'].clicked
-							background-color lighten(yellow1, 10)
+						&.clicked
+							transform scale(.9, .9)
+							box-shadow 1px 1px 10px 1px dark
 					p 
 						font-size .8rem
 						margin-top .2rem
@@ -155,3 +156,24 @@ body
 						transition-duration .3s
 						&.switched
 							transform translateX(-200%)
+							
+
+
+@keyframes show-simon {
+	0% {
+		transform translateY(25%) scale(0, 0) rotate(360deg)
+	}
+	
+	70% {
+		transform translateY(25%) scale(1.1, 1.1) rotate(-45deg)
+	}
+	
+	100% {
+		transform translateY(25%) scale(1, 1) rotate(0deg)
+	}
+}
+
+
+footer
+	width 100%
+	background-color red1
