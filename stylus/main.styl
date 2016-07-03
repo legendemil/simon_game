@@ -137,7 +137,8 @@ body
 					margin 0 .5rem
 					.switch-btn-control
 						top 0
-						left 0
+						left 100%
+						transform translateX(-100%)
 						border-radius @border-radius
 						position absolute
 						background-color blue1
@@ -147,4 +148,4 @@ body
 						cursor pointer
 						transition-duration .3s
 						&.switched
-							transform translateX(100%)
+							transform translateX(-200%)

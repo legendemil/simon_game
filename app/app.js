@@ -19,6 +19,7 @@ var simon = (function() {
 		isStrict 			= false,
 		isUserTurn 			= false,
 		isMistake 			= false,
+		isSound 			= true,
 		moves 				= [],
 		currentSimonIndex 	= 0,
 		currentUserIndex 	= 0,
@@ -167,6 +168,20 @@ var simon = (function() {
 		runRound();
 	}
 
+	function handleEnableSound(ev) {
+		var btn = $(ev.target);
+		btn.toggleClass('switched');
+		isSound = !isSound;
+		if(isSound) {
+			DOM.audio.simon.volume = 1;
+			DOM.audio.user.volume = 1;
+		} else {
+			DOM.audio.simon.volume = 0;
+			DOM.audio.user.volume = 0;
+		}
+		console.log('sound', isSound ? 'on' : 'off')
+	}
+
 
 	function cacheDOM() {
 		DOM.simon 			= $('.simon');
@@ -183,6 +198,7 @@ var simon = (function() {
 	function bindEvents() {
 		DOM.menu.startBtn.on('click', handleStartGame);
 		DOM.menu.strictBtn.on('click', handleStrictMode);
+		DOM.menu.switchBtn.on('click', handleEnableSound);
 		DOM.fields.on('click', handleClickField);
 
 		DOM.audio.simon.addEventListener('ended', handleSimonSoundEnd);

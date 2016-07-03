@@ -167,7 +167,10 @@ body {
 }
 .simon .simon-menu .simon-menu-box .row-items .switch-btn .switch-btn-control {
   top: 0;
-  left: 0;
+  left: 100%;
+  -webkit-transform: translateX(-100%);
+      -ms-transform: translateX(-100%);
+          transform: translateX(-100%);
   border-radius: 4px;
   position: absolute;
   background-color: #64b5f6;
@@ -178,7 +181,7 @@ body {
   transition-duration: 0.3s;
 }
 .simon .simon-menu .simon-menu-box .row-items .switch-btn .switch-btn-control.switched {
-  -webkit-transform: translateX(100%);
-      -ms-transform: translateX(100%);
-          transform: translateX(100%);
+  -webkit-transform: translateX(-200%);
+      -ms-transform: translateX(-200%);
+          transform: translateX(-200%);
 }
