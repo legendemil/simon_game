@@ -192,16 +192,24 @@ var simon = (function() {
 	}
 
 	function rotateSimon() {
+		var authorBox = DOM.rotationBox.find('#author');
+		TweenLite.to(DOM.rotationBox, 0, { 
+			rotationY: '180deg',
+			opacity: 1});
 		TweenLite.from(DOM.rotationBox, 1, {
 			scale: 0,
-			rotation: 36		})
-		TweenLite.to(DOM.rotationBox, 0, { rotationY: '180deg'});
+			rotation: 36
+		});
+		
 		TweenLite.to(DOM.rotationBox, 1, {
 			delay: 2.5,
 			rotationY: '360deg',
 			onComplete: function() {
-				TweenLite.to(DOM.rotationBox.find('#author'), .5, {
-					opacity: 0
+				TweenLite.to(authorBox, .5, {
+					opacity: 0,
+					onComplete: function() {
+						authorBox.css('display', 'none');
+					}
 				})
 			}
 		});

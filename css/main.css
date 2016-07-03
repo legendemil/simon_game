@@ -16,6 +16,7 @@ body {
   color: #fff;
 }
 #rotation-box {
+  opacity: 0;
   position: relative;
   left: 50%;
   -webkit-transform: translateX(-25%);
