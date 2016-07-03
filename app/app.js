@@ -16,7 +16,9 @@ var simon = (function() {
 	};
 
 	var isStart 			= false,
+		isStrict 			= false,
 		isUserTurn 			= false,
+		isMistake 			= false,
 		moves 				= [],
 		currentSimonIndex 	= 0,
 		currentUserIndex 	= 0,
@@ -28,6 +30,18 @@ var simon = (function() {
 		moves 				= [];
 		currentSimonIndex 	= 0;
 		currentUserIndex 	= 0;
+		updateScreen();
+	}
+
+	function restartGame() {
+		if(isStrict)
+			moves 				= [];
+		currentSimonIndex 	= 0;
+		currentUserIndex  	= 0;
+		updateScreen();
+		setTimeout(function() { 
+			runRound();
+		}, 2000);
 	}
 
 	function randomField() {
@@ -39,9 +53,15 @@ var simon = (function() {
 	}
 
 	function runRound() {
-		var newField = randomField();
-		moves.push(newField);
-		updateScreen();
+		var newField;
+
+		if(!isMistake && !isStrict) {
+			newField 			= randomField();
+			moves.push(newField);
+			updateScreen();
+		}
+		isMistake = false;
+
 		setTimeout(function () {
 			startSimonSound();
 		}, 1000);
@@ -49,7 +69,7 @@ var simon = (function() {
 	}
 
 	function nextRound() {
-		currentUserIndex = 0;
+		currentUserIndex 	= 0;
 		console.log('dorze, kolejna runda');
 		isUserTurn = false;
 		runRound();
@@ -91,15 +111,23 @@ var simon = (function() {
 		field.toggleClass('active');
 	}
 
+	function handleStrictMode(ev) {
+		var btn = $(ev.target);
+		btn.toggleClass('clicked');
+		isStrict = !isStrict;
+	}
+
 	function handleSimonSoundEnd(ev) {
 		highlightField(moves[currentSimonIndex]);
 		currentSimonIndex++;
-		startSimonSound();
+		setTimeout(function () {
+			startSimonSound();
+		}, 800);
 	}
 
 	function handleUserSoundEnd() {
 		highlightField(currentUserField);
-		if(currentUserIndex === moves.length) {
+		if(currentUserIndex === moves.length && !isMistake) {
 			nextRound();
 		}
 	}
@@ -119,7 +147,9 @@ var simon = (function() {
 			currentUserIndex++;
 		}
 		else {
-			console.log('zle');
+			console.log('zle')
+			isMistake = true;
+			restartGame();
 		}
 	}
 
@@ -148,6 +178,7 @@ var simon = (function() {
 
 	function bindEvents() {
 		DOM.menu.startBtn.on('click', handleStartGame);
+		DOM.menu.strictBtn.on('click', handleStrictMode);
 		DOM.fields.on('click', handleClickField);
 
 		DOM.audio.simon.addEventListener('ended', handleSimonSoundEnd);
