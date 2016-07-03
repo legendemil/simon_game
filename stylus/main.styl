@@ -113,13 +113,16 @@ body
 						height 20px	
 						border-radius 100%
 						border none
-						border 3px solid dark
+						box-shadow 2px 2px 7px 1px dark
+						transition-duration .3s
 						&[value='start']
 							background-color red2
 						&[value='strict']
 							background-color yellow		
-						&.clicked
-							box-shadow 3px 3px 4px inset	
+						&[value='start'].clicked
+							background-color lighten(red1, 20)
+						&[value='strict'].clicked
+							background-color lighten(yellow1, 10)
 					p 
 						font-size .8rem
 						margin-top .2rem

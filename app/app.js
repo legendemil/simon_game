@@ -35,7 +35,8 @@ var simon = (function() {
 
 	function restartGame() {
 		if(isStrict)
-			moves 				= [];
+			moves = [];
+
 		currentSimonIndex 	= 0;
 		currentUserIndex  	= 0;
 		updateScreen();
@@ -55,11 +56,13 @@ var simon = (function() {
 	function runRound() {
 		var newField;
 
-		if(!isMistake && !isStrict) {
-			newField 			= randomField();
+		if( !isMistake 
+			|| (isMistake && isStrict) ) {
+			newField = randomField();
 			moves.push(newField);
 			updateScreen();
 		}
+
 		isMistake = false;
 
 		setTimeout(function () {
@@ -115,6 +118,7 @@ var simon = (function() {
 		var btn = $(ev.target);
 		btn.toggleClass('clicked');
 		isStrict = !isStrict;
+		console.log('strict mode', isStrict)
 	}
 
 	function handleSimonSoundEnd(ev) {

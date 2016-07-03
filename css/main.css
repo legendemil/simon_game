@@ -136,7 +136,8 @@ body {
   height: 20px;
   border-radius: 100%;
   border: none;
-  border: 3px solid #212121;
+  box-shadow: 2px 2px 7px 1px #212121;
+  transition-duration: 0.3s;
 }
 .simon .simon-menu .simon-menu-box .row-items .btn-box button[value='start'] {
   background-color: #d50000;
@@ -144,8 +145,11 @@ body {
 .simon .simon-menu .simon-menu-box .row-items .btn-box button[value='strict'] {
   background-color: #ff0;
 }
-.simon .simon-menu .simon-menu-box .row-items .btn-box button.clicked {
-  box-shadow: 3px 3px 4px inset;
+.simon .simon-menu .simon-menu-box .row-items .btn-box button[value='start'].clicked {
+  background-color: #e55454;
+}
+.simon .simon-menu .simon-menu-box .row-items .btn-box button[value='strict'].clicked {
+  background-color: #ffe273;
 }
 .simon .simon-menu .simon-menu-box .row-items .btn-box p {
   font-size: 0.8rem;
