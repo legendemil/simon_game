@@ -40,8 +40,9 @@ var simon = (function() {
 
 		currentSimonIndex 	= 0;
 		currentUserIndex  	= 0;
-		updateScreen();
+		updateScreen(true);
 		setTimeout(function() { 
+			updateScreen();
 			runRound();
 		}, 2000);
 	}
@@ -50,7 +51,13 @@ var simon = (function() {
 		return Math.floor(Math.random() * 4 ) + 1;
 	}
 
-	function updateScreen() {
+	function updateScreen(isMistake) {
+		if(isMistake) {
+			DOM.menu.screen.addClass('error');
+			DOM.menu.screen.text('WRONG!');
+			return;
+		}
+		DOM.menu.screen.removeClass('error');
 		DOM.menu.screen.text(moves.length);
 	}
 
@@ -73,7 +80,7 @@ var simon = (function() {
 	}
 
 	function nextRound() {
-		currentUserIndex 	= 0;
+		currentUserIndex = 0;
 		console.log('dorze, kolejna runda');
 		isUserTurn = false;
 		runRound();
@@ -108,6 +115,12 @@ var simon = (function() {
 		DOM.audio.user.play();
 	}	
 
+	function winGame() {
+		stopGame();
+		DOM.menu.screen.text("WIN!");
+		DOM.menu.startBtn.find('button').toggleClass('clicked');
+	}
+
 	// highlight or unhighlighed field
 	function highlightField(value) {
 		var query = '[data-value=' + value +']';
@@ -132,6 +145,10 @@ var simon = (function() {
 
 	function handleUserSoundEnd() {
 		highlightField(currentUserField);
+		if(currentUserIndex === 20 ) {
+			winGame();
+			return;
+		}
 		if(currentUserIndex === moves.length && !isMistake) {
 			nextRound();
 		}

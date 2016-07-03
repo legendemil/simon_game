@@ -17,6 +17,9 @@ body {
 }
 .simon {
   position: relative;
+  -webkit-transform: translateY(25%);
+      -ms-transform: translateY(25%);
+          transform: translateY(25%);
   width: 400px;
   height: 400px;
   background-color: #212121;
@@ -119,11 +122,17 @@ body {
           justify-content: center;
 }
 .simon .simon-menu .simon-menu-box .row-items .simon-screen {
+  box-sizing: border-box;
   border-radius: 4px;
   background-color: #212121;
   color: #fff;
   width: 50px;
   height: 30px;
+  padding-top: 0.3rem;
+}
+.simon .simon-menu .simon-menu-box .row-items .simon-screen.error {
+  color: #b71c1c;
+  font-size: 0.7rem;
   padding-top: 0.5rem;
 }
 .simon .simon-menu .simon-menu-box .row-items .btn-box {

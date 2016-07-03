@@ -34,6 +34,7 @@ body
 //------------------- Simon Game Styles ----------------------//
 .simon
 	position relative
+	transform translateY(25%)
 	width simon-size
 	height simon-size
 	background-color dark
@@ -98,12 +99,17 @@ body
 				display flex
 				justify-content center
 				.simon-screen
+					box-sizing border-box
 					border-radius 4px
 					background-color dark
 					color #fff
 					width 50px
 					height 30px
-					padding-top .5rem
+					padding-top .3rem
+					&.error
+						color red1
+						font-size .7rem
+						padding-top .5rem
 				.btn-box
 					margin-left .5rem
 					button 
