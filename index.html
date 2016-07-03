@@ -13,52 +13,57 @@
 
 	<div id="wrapper">	
 		
-		<div class="simon">
+		<div id='rotation-box'>
+			<div class="simon">
+				<div class="green field" data-value=1 ></div>
+				<div class="red field" data-value=2 ></div>
+				<div class="blue field" data-value=3 ></div>
+				<div class="yellow field" data-value=4 ></div>
+				
+				<div class="simon-menu">
 
-			<div class="green field" data-value=1 ></div>
-			<div class="red field" data-value=2 ></div>
-			<div class="blue field" data-value=3 ></div>
-			<div class="yellow field" data-value=4 ></div>
-			
-			<div class="simon-menu">
+					<div class="simon-menu-box">
 
-				<div class="simon-menu-box">
+						<h2>Simon</h2>
 
-					<h2>Simon</h2>
+						<div class="row-items">
 
-					<div class="row-items">
+							<div class="simon-screen">
+								0
+							</div>
 
-						<div class="simon-screen">
-							0
+							<div class="btn-box" id='btn-start'>
+								<button value='start'></button>
+								<p>Start</p>
+							</div>
+
+							<div class="btn-box" id='btn-strict'>
+								<button value='strict'></button>
+								<p>Strict</p>
+							</div>
+
+						</div>
+						<div class="row-items">
+
+							<span>off</span>
+							<span class='switch-btn'>
+								<span class='switch-btn-control'></span>
+							</span>
+							<span>on</span>
+
 						</div>
 
-						<div class="btn-box" id='btn-start'>
-							<button value='start'></button>
-							<p>Start</p>
-						</div>
-
-						<div class="btn-box" id='btn-strict'>
-							<button value='strict'></button>
-							<p>Strict</p>
-						</div>
+						<small>Sound</small>
 
 					</div>
-					<div class="row-items">
-
-						<span>off</span>
-						<span class='switch-btn'>
-							<span class='switch-btn-control'></span>
-						</span>
-						<span>on</span>
-
-					</div>
-
-					<small>Sound</small>
 
 				</div>
 
 			</div>
-
+			<div id='author'>
+				Created by Emil Pausz <br> <small>The coolest guy in the universe.</small> 
+				<a href="https://github.com/legendemil/simon_game" target='_blank'>Github Page</a>
+			</div>
 		</div>
 
 	</div>
@@ -75,6 +80,8 @@
 	<!-- import jQuery -->
 	<script src="https://code.jquery.com/jquery-3.0.0.min.js" integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0=" crossorigin="anonymous"></script>
 	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+
 	<!-- JS -->
 	<script src='app/app.js'></script>
 </body>

@@ -31,10 +31,39 @@ body
 	background-color dark
 	color #fff
 	
+//------------------- Rotation-Box Styles ----------------------//
+#rotation-box
+	position relative
+	left 50%
+	transform translateX(-25%)
+	transform-origin 25% 25%
+	#author
+		font-size 1.5rem
+		box-sizing border-box
+		padding-top 7rem
+		border-radius 100%
+		position absolute
+		top 0
+		left 0
+		width simon-size
+		height simon-size
+		background-color dark
+		color #fff
+		transform rotateY(-180deg)
+		z-index 2000
+		text-align center
+		border 10px solid #fff
+		a 
+			padding .3rem
+			text-decoration none
+			display block
+			margin-top 2rem
+			background-color #fff
+			color dark
+	
 //------------------- Simon Game Styles ----------------------//
 .simon
-	position relative
-	transform translateY(25%)
+	position absolute
 	width simon-size
 	height simon-size
 	background-color dark
@@ -47,8 +76,8 @@ body
 	align-items center
 	align-content center
 	box-shadow 10px 10px 50px 2px  black
-	animation-name show-simon
-	animation-duration 2s
+	// animation-name show-simon
+	// animation-duration 2s
 	.field
 		width ( simon-size / 2.3 ) px
 		height ( simon-size / 2.3 ) px

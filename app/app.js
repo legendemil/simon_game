@@ -1,5 +1,6 @@
 var simon = (function() {
 	var DOM = {
+		rotationBox 	: null,
 		simon 			: null,
 		fields 			: null,
 		currentField 	: null,
@@ -190,9 +191,26 @@ var simon = (function() {
 		}
 	}
 
+	function rotateSimon() {
+		TweenLite.from(DOM.rotationBox, 1, {
+			scale: 0,
+			rotation: 36		})
+		TweenLite.to(DOM.rotationBox, 0, { rotationY: '180deg'});
+		TweenLite.to(DOM.rotationBox, 1, {
+			delay: 2.5,
+			rotationY: '360deg',
+			onComplete: function() {
+				TweenLite.to(DOM.rotationBox.find('#author'), .5, {
+					opacity: 0
+				})
+			}
+		});
+	}
+
 
 	function cacheDOM() {
-		DOM.simon 			= $('.simon');
+		DOM.rotationBox 	= $('#rotation-box');
+		DOM.simon 			= $(DOM.rotationBox).find('.simon');
 		DOM.fields 			= $(DOM.simon).find('.field');
 		DOM.menu.screen 	= $(DOM.simon).find('.simon-screen');
 		DOM.menu.startBtn 	= $(DOM.simon).find('#btn-start');
@@ -211,6 +229,7 @@ var simon = (function() {
 
 		DOM.audio.simon.addEventListener('ended', handleSimonSoundEnd);
 		DOM.audio.user.addEventListener('ended', handleUserSoundEnd);
+		rotateSimon();
 	}
 	
 	function init() {

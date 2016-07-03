@@ -15,11 +15,44 @@ body {
   background-color: #212121;
   color: #fff;
 }
-.simon {
+#rotation-box {
   position: relative;
-  -webkit-transform: translateY(25%);
-      -ms-transform: translateY(25%);
-          transform: translateY(25%);
+  left: 50%;
+  -webkit-transform: translateX(-25%);
+      -ms-transform: translateX(-25%);
+          transform: translateX(-25%);
+  -webkit-transform-origin: 25% 25%;
+      -ms-transform-origin: 25% 25%;
+          transform-origin: 25% 25%;
+}
+#rotation-box #author {
+  font-size: 1.5rem;
+  box-sizing: border-box;
+  padding-top: 7rem;
+  border-radius: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 400px;
+  height: 400px;
+  background-color: #212121;
+  color: #fff;
+  -webkit-transform: rotateY(-180deg);
+          transform: rotateY(-180deg);
+  z-index: 2000;
+  text-align: center;
+  border: 10px solid #fff;
+}
+#rotation-box #author a {
+  padding: 0.3rem;
+  text-decoration: none;
+  display: block;
+  margin-top: 2rem;
+  background-color: #fff;
+  color: #212121;
+}
+.simon {
+  position: absolute;
   width: 400px;
   height: 400px;
   background-color: #212121;
@@ -44,10 +77,6 @@ body {
       -ms-flex-line-pack: center;
           align-content: center;
   box-shadow: 10px 10px 50px 2px #000;
-  -webkit-animation-name: show-simon;
-          animation-name: show-simon;
-  -webkit-animation-duration: 2s;
-          animation-duration: 2s;
 }
 .simon .field {
   width: 173.91304347826087px;
