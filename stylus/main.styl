@@ -25,19 +25,19 @@ body
 #wrapper
 	max-width 90%
 	width 800px
-	margin 0 auto
+	margin 0 auto	
 	
 ::selection
 	background-color dark
 	color #fff
 	
-//------------------- Rotation-Box Styles ----------------------//
+	
+//------------------- Simon Game Styles ----------------------//
 #rotation-box
+	width simon-size
+	margin 0 auto
 	opacity 0
 	position relative
-	left 50%
-	transform translateX(-25%)
-	transform-origin 25% 25%
 	#author
 		font-size 1.5rem
 		box-sizing border-box
@@ -61,145 +61,181 @@ body
 			margin-top 2rem
 			background-color #fff
 			color dark
-	
-//------------------- Simon Game Styles ----------------------//
-.simon
-	position absolute
-	width simon-size
-	height simon-size
-	background-color dark
-	margin 0 auto
-	border-radius 100%
-	display flex
-	flex-direction row
-	flex-wrap wrap 
-	justify-content center
-	align-items center
-	align-content center
-	box-shadow 10px 10px 50px 2px  black
-	// animation-name show-simon
-	// animation-duration 2s
-	.field
-		width ( simon-size / 2.3 ) px
-		height ( simon-size / 2.3 ) px
-		margin .3rem
-		cursor pointer
-	.green 
-		background-color green1
-		border-top-left-radius 100%
-		&.active
-			background-color lighten(@background-color, 20)
-	.red
-		background-color red1
-		border-top-right-radius 100%
-		&.active
-			background-color lighten(@background-color, 20)
-	.blue 
-		background-color blue1
-		border-bottom-left-radius 100%
-		&.active
-			background-color lighten(@background-color, 20)
-	.yellow 
-		background-color yellow1
-		border-bottom-right-radius 100%
-		&.active
-			background-color lighten(@background-color, 20)
-	.simon-menu
-		box-shadow @box-shadow
-		box-sizing border-box
+	.simon
 		position absolute
+		width simon-size
+		height simon-size
 		background-color dark
-		width ( simon-size / 2 ) px
-		height ( simon-size / 2 ) px
-		top 50%
-		left 50%
-		transform translateX(-50%) translateY(-50%)
+		margin 0 auto
 		border-radius 100%
-		display flex 
+		display flex
+		flex-direction row
+		flex-wrap wrap 
 		justify-content center
 		align-items center
-		.simon-menu-box
-			text-transform uppercase
-			text-align center
-			background-color #eee
-			width 90%
-			height 90%
+		align-content center
+		box-shadow 10px 10px 50px 2px  black
+		.field
+			width ( simon-size / 2.3 ) px
+			height ( simon-size / 2.3 ) px
+			margin .3rem
+			cursor pointer
+		.green 
+			background-color green1
+			border-top-left-radius 100%
+			&.active
+				background-color lighten(@background-color, 20)
+		.red
+			background-color red1
+			border-top-right-radius 100%
+			&.active
+				background-color lighten(@background-color, 20)
+		.blue 
+			background-color blue1
+			border-bottom-left-radius 100%
+			&.active
+				background-color lighten(@background-color, 20)
+		.yellow 
+			background-color yellow1
+			border-bottom-right-radius 100%
+			&.active
+				background-color lighten(@background-color, 20)
+		.simon-menu
+			box-shadow @box-shadow
+			box-sizing border-box
+			position absolute
+			background-color dark
+			width ( simon-size / 2 ) px
+			height ( simon-size / 2 ) px
+			top 50%
+			left 50%
+			transform translateX(-50%) translateY(-50%)
 			border-radius 100%
-			h2 
-				margin-top 1.5rem
-			.row-items
-				display flex
-				justify-content center
-				.simon-screen
-					box-sizing border-box
-					border-radius 4px
-					background-color dark
-					color #fff
-					width 50px
-					height 30px
-					padding-top .3rem
-					&.error
-						color red1
-						font-size .7rem
-						padding-top .5rem
-				.btn-box
-					margin-left .5rem
-					button 
-						outline none
-						cursor pointer
-						width 20px 
-						height 20px	
-						border-radius 100%
-						border 4px solid dark
-						box-shadow 2px 2px 7px 1px dark
-						transition-duration .3s
-						&[value='start']
-							background red2
-						&[value='strict']
-							background-color yellow		
-						&.clicked
-							transform scale(.9, .9)
-							box-shadow 1px 1px 10px 1px dark
-					p 
-						font-size .8rem
-						margin-top .2rem
-				.switch-btn
-					position relative
-					box-sizing border-box
-					display inline-block
-					background-color #ccc
-					border-radius 4px
-					width 50px
-					height 20px
-					margin 0 .5rem
-					.switch-btn-control
-						top 0
-						left 100%
-						transform translateX(-100%)
-						border-radius @border-radius
-						position absolute
-						background-color blue1
+			display flex 
+			justify-content center
+			align-items center
+			.simon-menu-box
+				text-transform uppercase
+				text-align center
+				background-color #eee
+				width 90%
+				height 90%
+				border-radius 100%
+				h2 
+					margin-top 1.5rem
+				.row-items
+					display flex
+					justify-content center
+					.simon-screen
+						box-sizing border-box
+						border-radius 4px
+						background-color dark
+						color #fff
+						width 50px
+						height 30px
+						padding-top .3rem
+						&.error
+							color red1
+							font-size .7rem
+							padding-top .5rem
+					.btn-box
+						margin-left .5rem
+						button 
+							outline none
+							cursor pointer
+							width 20px 
+							height 20px	
+							border-radius 100%
+							border 4px solid dark
+							box-shadow 2px 2px 7px 1px dark
+							transition-duration .3s
+							&[value='start']
+								background red2
+							&[value='strict']
+								background-color yellow		
+							&.clicked
+								transform scale(.9, .9)
+								box-shadow 1px 1px 10px 1px dark
+						p 
+							font-size .8rem
+							margin-top .2rem
+					.switch-btn
+						position relative
+						box-sizing border-box
 						display inline-block
-						width 50%
-						height 100%
-						cursor pointer
-						transition-duration .3s
-						&.switched
-							transform translateX(-200%)
+						background-color #ccc
+						border-radius 4px
+						width 50px
+						height 20px
+						margin 0 .5rem
+						.switch-btn-control
+							top 0
+							left 100%
+							transform translateX(-100%)
+							border-radius @border-radius
+							position absolute
+							background-color blue1
+							display inline-block
+							width 50%
+							height 100%
+							cursor pointer
+							transition-duration .3s
+							&.switched
+								transform translateX(-200%)
+								
+
+@media screen and (max-width: 440px) 
+	#rotation-box
+		width 300px
+		height 300px
+		#author
+			width @width
+			height @height
+			font-size 1.4rem
+			padding-top 6rem
+			a 
+				display inline-block
+				width 200px
+				border-radius 6px
+		.simon 
+			width @width
+			height @height
+			.simon-menu
+				width ( @width / 2 ) px
+				height ( @height / 2 ) px
+				.simon-menu-box
+					h2
+						font-size 1rem
+						margin-top .8rem
+						margin-bottom .3rem
+					.row-items
+						margin-top .6rem
+						align-items center
+						.simon-screen
+							font-size .8rem
+							padding-top 2px
+							width 25px
+							height 20px
+						.btn-box
+							p
+								font-size .7rem
+								margin 2px
+						.switch-btn
+							width 30px
+							height 15px
+					.btn-label
+							font-size .7rem
+			.field
+				width (@width / 2.3)px
+				height (@height / 2.3)px
 							
-
-
-@keyframes show-simon {
-	0% {
-		transform translateY(25%) scale(0, 0) rotate(360deg)
-	}
-	
-	70% {
-		transform translateY(25%) scale(1.1, 1.1) rotate(-45deg)
-	}
-	
-	100% {
-		transform translateY(25%) scale(1, 1) rotate(0deg)
-	}
-}
-
+@media screen and (max-width: 320px) 
+	#rotation-box
+		width 280px
+		height 280px
+		.simon 
+			width @width
+			height @height
+			.field
+				width (@width / 2.3)px
+				height (@height / 2.3)px
