@@ -2,7 +2,7 @@ var simon = (function() {
 	var DOM = {
 		simon 			: null,
 		fields 			: null,
-		currentField 	: null,
+		currentField 		: null,
 		menu 			: {
 			screen 			: null,
 			startBtn 		: null,
@@ -15,20 +15,21 @@ var simon = (function() {
 		}
 	};
 
-	var isStart 			= false,
-		isStrict 			= false,
-		isUserTurn 			= false,
-		isMistake 			= false,
-		isSound 			= true,
-		moves 				= [],
+	var 
+		isStart 		= false,
+		isStrict 		= false,
+		isUserTurn 		= false,
+		isMistake 		= false,
+		isSound 		= true,
+		moves 			= [],
 		currentSimonIndex 	= 0,
 		currentUserIndex 	= 0,
 		currentUserField 	= 0;
 	
 	function stopGame() {
-		isStart 			= false;
-		isUserTurn 			= false;
-		moves 				= [];
+		isStart   		= false;
+		isUserTurn 		= false;
+		moves 			= [];
 		currentSimonIndex 	= 0;
 		currentUserIndex 	= 0;
 		updateScreen();
@@ -155,7 +156,7 @@ var simon = (function() {
 		if(!isUserTurn)
 			return;
 
-		var field 			= $(ev.target);
+		var field 		= $(ev.target);
 		currentUserField 	= parseInt(field.attr('data-value'));
 
 		startUserSound(currentUserField);
@@ -192,8 +193,8 @@ var simon = (function() {
 
 
 	function cacheDOM() {
-		DOM.simon 			= $('.simon');
-		DOM.fields 			= $(DOM.simon).find('.field');
+		DOM.simon 		= $('.simon');
+		DOM.fields 		= $(DOM.simon).find('.field');
 		DOM.menu.screen 	= $(DOM.simon).find('.simon-screen');
 		DOM.menu.startBtn 	= $(DOM.simon).find('#btn-start');
 		DOM.menu.strictBtn 	= $(DOM.simon).find('#btn-strict');
